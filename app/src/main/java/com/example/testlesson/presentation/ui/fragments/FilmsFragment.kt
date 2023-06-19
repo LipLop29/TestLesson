@@ -57,11 +57,9 @@ class FilmsFragment :
         }
     }
 
-    private fun onItemClick(
-        id: String
-    ) {
+    private fun onItemClick(id: String) {
         findNavController().navigate(
-            R.id.action_filmsFragment_to_detailFilmsFragment
+            FilmsFragmentDirections.actionFilmsFragmentToDetailFilmsFragment(id)
         )
     }
 }

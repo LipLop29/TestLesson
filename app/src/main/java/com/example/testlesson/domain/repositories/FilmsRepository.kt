@@ -8,5 +8,5 @@ interface FilmsRepository {
 
     fun fetchFilms(): Flow<Resource<List<Films>>>
 
-    suspend fun fetchFilmsDetail(id: String): Films
+    fun fetchFilmsDetail(id: String): Flow<Resource<Films>>
 }

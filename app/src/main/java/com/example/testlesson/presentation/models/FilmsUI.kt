@@ -4,6 +4,8 @@ import com.example.testlesson.domain.models.Films
 import com.google.gson.annotations.SerializedName
 
 data class ResponseFilmsUI(
+    @SerializedName("image")
+    val image: String,
     @SerializedName("original_title")
     val originalTitle: String = "",
     @SerializedName("director")
@@ -38,6 +40,7 @@ data class ResponseFilmsUI(
 
 fun Films.toUI(): ResponseFilmsUI {
     return ResponseFilmsUI(
+        image,
         originalTitle,
         director,
         description,

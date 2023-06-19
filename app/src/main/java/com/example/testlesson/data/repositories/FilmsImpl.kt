@@ -5,6 +5,8 @@ import com.example.testlesson.data.dtos.toDomain
 import com.example.testlesson.data.remote.apiservices.FilmsApi
 import com.example.testlesson.domain.models.Films
 import com.example.testlesson.domain.repositories.FilmsRepository
+import com.example.testlesson.utils.Resource
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class FilmsImpl @Inject constructor(
@@ -17,7 +19,8 @@ class FilmsImpl @Inject constructor(
         }
     }
 
-    override suspend fun fetchFilmsDetail(id: String): Films {
-        return filmsApiService.fetchDetailFilms(id).toDomain()
+    override fun fetchFilmsDetail(id: String) = doRequest{
+        filmsApiService.fetchDetailFilms(id).toDomain()
     }
+
 }

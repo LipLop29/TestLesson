@@ -3,7 +3,9 @@ package com.example.testlesson.data.dtos
 import com.example.testlesson.domain.models.Films
 import com.google.gson.annotations.SerializedName
 
-data class ResponseFilmsDto(
+data class FilmsDto(
+    @SerializedName("image")
+    val image: String,
     @SerializedName("original_title")
     val originalTitle: String = "",
     @SerializedName("director")
@@ -36,8 +38,9 @@ data class ResponseFilmsDto(
     val id: String = ""
 )
 
-fun ResponseFilmsDto.toDomain(): Films {
+fun FilmsDto.toDomain(): Films {
     return Films(
+        image,
         originalTitle,
         director,
         description,

@@ -2,6 +2,7 @@ package com.example.testlesson.domain.models
 
 
 data class Films(
+    val image: String,
     val originalTitle: String = "",
     val director: String = "",
     val description: String = "",
